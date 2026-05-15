@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Building RAG Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Autonomous Building Chatbot</h1>
+            <p>Ask questions about Autonomous Building references</p>
+        </header>
+
+        <main class="main-content">
+            <div class="chat-container">
+                <div class="chat-history" id="chat-history">
+                    <div class="message bot-message">
+                        Hello! I'm your AI assistant for Autonomous Building documentation. How can I help you today?
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input type="text" id="question-input" placeholder="Type your question here..."
+                        onkeypress="handleKeyPress(event)">
+                    <button onclick="askQuestion()" id="send-btn">Send</button>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>Context Upload</h3>
+                <p class="desc">Upload additional PDFs to add more context to the current session.</p>
+                <div class="upload-container">
+                    <input type="file" id="pdf-upload" accept=".pdf" />
+                    <button onclick="uploadPDF()" id="upload-btn">Upload PDF</button>
+                </div>
+                <div id="upload-status"></div>
+
+                <div class="sources-panel">
+                    <h3>Retrieved Sources</h3>
+                    <div id="sources-list">
+                        <p class="desc text-muted">Sources will appear here after you ask a question.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

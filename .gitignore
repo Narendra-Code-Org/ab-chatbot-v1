@@ -1,0 +1,9 @@
+autonomous-buildings-whitepaper.pdf
+venv/
+local_chroma_db/
+data/
+local_chroma_db/
+scratch/
+.env
+chatbot/__pycache__/
+__pycache__/

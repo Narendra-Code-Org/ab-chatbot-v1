@@ -1,0 +1,14 @@
+flask
+langchain
+langchain-classic
+langchain-community
+langchain-huggingface
+qdrant-client
+langchain-qdrant
+pydantic-settings
+pypdf
+sentence-transformers
+werkzeug
+langchain-text-splitters
+langchain-ollama
+gunicorn

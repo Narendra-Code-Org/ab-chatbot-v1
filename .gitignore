@@ -7,3 +7,4 @@ scratch/
 .env
 chatbot/__pycache__/
 __pycache__/
+local_qdrant_db

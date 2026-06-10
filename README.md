@@ -9,19 +9,18 @@ A modular, AI-powered Retrieval-Augmented Generation (RAG) chatbot developed for
 ## Features
 
 - **RAG Architecture**: Provides grounded, context-aware answers to user queries, strictly adhering to hallucination-prevention rules.
-- **Tech Stack**: Built using Python, Flask, LangChain, ChromaDB, and Ollama.
+- **Tech Stack**: Built using Python, FastAPI, LangChain, Cloud Qdrant, AWS Bedrock (Titan text embeddings v2), and Ollama (LLM).
 - **Pre-loaded Knowledge**: Ingests default PDF documents for foundational knowledge base context.
 - **Dynamic Uploads**: Allows dynamic, session-based PDF uploads for targeted document chat.
 - **Modern UI**: Frontend interface designed for a seamless user experience.
 
 ## Getting Started
 
-
 ### Installation
 
 1. Navigate to the project directory:
    ```bash
-   cd AB_Chatbot
+   cd ab-chatbot-v1
    ```
 
 2. Create and activate a virtual environment:
@@ -38,14 +37,18 @@ A modular, AI-powered Retrieval-Augmented Generation (RAG) chatbot developed for
    pip install -r requirements.txt
    ```
 
-4. Configure environment variables in the `.env` file (if required).
+4. Configure environment variables in the `.env` file, including AWS Bedrock credentials.
 
 ### Running the Application
 
-Start the Flask application:
+Start the FastAPI application:
 
 ```bash
 python app.py
 ```
+Or run directly with uvicorn:
+```bash
+uvicorn app:app --reload
+```
 
-Then, navigate to the local URL provided by Flask (usually `http://127.0.0.1:5000/`) in your web browser.
+Then, navigate to the local URL (usually `http://127.0.0.1:8000/`) in your web browser. API documentation is automatically generated and accessible at `http://127.0.0.1:8000/docs`.

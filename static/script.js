@@ -76,7 +76,7 @@ async function askQuestion() {
             appendMessage('bot', data.answer);
             updateSources(data.sources);
         } else {
-            appendMessage('bot', `Error: ${data.error}`);
+            appendMessage('bot', `Error: ${data.detail || data.error || 'Unknown error'}`);
         }
     } catch (error) {
         const loadingMsg = document.getElementById('loading-msg');
@@ -122,7 +122,7 @@ async function uploadPDF() {
             statusDiv.className = 'success';
             fileInput.value = '';
         } else {
-            statusDiv.textContent = `Error: ${data.error}`;
+            statusDiv.textContent = `Error: ${data.detail || data.error || 'Unknown error'}`;
             statusDiv.className = 'error';
         }
     } catch (error) {

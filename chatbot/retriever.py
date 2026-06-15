@@ -30,8 +30,8 @@ def get_embeddings():
 
         return BedrockEmbeddings(
             client=client,
-            model_id=settings.bedrock_model_id,
-            dimensions=1024
+            model_id=settings.bedrock_embeddings_model_id,
+            dimensions=512
         )
     except Exception as e:
         logger.error(f"Failed to initialize BedrockEmbeddings client: {e}", exc_info=True)
@@ -52,7 +52,7 @@ def get_vectorstore(collection_name: str):
         client = QdrantClient(path="local_qdrant_db")
     
     # Ensure the collection exists in Qdrant and matches dimensions
-    target_dim = 1024
+    target_dim = 512
     try:
         if not client.collection_exists(collection_name):
             client.create_collection(

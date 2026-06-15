@@ -8,3 +8,4 @@ scratch/
 chatbot/__pycache__/
 __pycache__/
 local_qdrant_db
+code_flow_analysis.md
